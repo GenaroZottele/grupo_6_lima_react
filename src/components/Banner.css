@@ -1,33 +1,32 @@
 .banner {
-    margin-top: 0;
-    padding: 100px 0 0px 0;
-    background-image: url('../assets/img/banner-background-white.png');
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    height: 35vh;
+   margin-top: 0;
+   padding: 100px 0 0px 0;
+   background-image: url('../assets/img/banner-background-white.png');
+   background-position: top center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   display: flex;
+   justify-content: center;
+   height: 35vh;
 }
-#h1{
-    font-family: 'Centra', sans-serif !important;
-    font-size: 100px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    line-height: 1;
-    margin-bottom: 20px;
-    padding-top: 70px;
-    display: block;
-    width: 50%;
-    color: #b8d8be;
-    
+#h1 {
+   font-family: 'Centra', sans-serif !important;
+   font-size: 13vh;
+   font-weight: 700;
+   letter-spacing: 0.8px;
+   line-height: 1;
+   margin-bottom: 20px;
+   padding-top: 4vh;
+   display: block;
+   width: 50%;
+   color: #a3c2a9;
 }
-.banner-back{
-    margin-top: 20%;
-    width: 100%;
-    height: 100vh;
-    background: url("../assets/img/IMG_2902.JPG") fixed;
+.banner-back {
+   margin-top: 20%;
+   width: 100%;
+   height: 100vh;
+   background: url('../assets/img/IMG_2902.JPG') fixed;
 
-    background-repeat: no-repeat;
-    background-size: cover;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
