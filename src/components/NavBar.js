@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../assets/img/logo-lima.png';
-
+import { Routes,Route,Link } from 'react-router-dom';
+import { Login } from '../pages/Login';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import './NavBar.css';
 
-export const NavBar = () => {
+export const NavBar = (Login) => {
    const [activeLink, setActiveLink] = useState('home');
    const [scrolled, seScrolled] = useState(false);
    useEffect(() => {
@@ -30,7 +31,7 @@ export const NavBar = () => {
    return (
       <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
          <Container>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
                <img src={logo} alt="Logo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -53,7 +54,7 @@ export const NavBar = () => {
                      Nosotros
                   </Nav.Link>
                   <Nav.Link
-                     href="#projects"
+                     href="../pages/Login.js"
                      className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
                      onClick={() => onUpdateActiveLink('projects')}
                   >
@@ -61,10 +62,11 @@ export const NavBar = () => {
                   </Nav.Link>
                </Nav>
                <span className="navbar-text">
+                  <Link to="/Login">
                   <button className="vvd">
                      <span>Iniciar Sesion</span>
                   </button>
-
+                  </Link>
                   <div className="social-icon">
                      <a href="#">
                         <img src={navIcon1} alt="" />
