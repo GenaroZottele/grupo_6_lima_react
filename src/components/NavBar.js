@@ -3,10 +3,10 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../assets/img/logo-lima.png';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Login } from '../pages/Login';
-import navIcon1 from '../assets/img/nav-icon1.svg';
+import navIcon1 from '../assets/img/shopping-cart.png';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
-import './Navbar.css';
+import './NavBar.css';
 
 export const NavBar = (Login) => {
    const [activeLink, setActiveLink] = useState('home');
