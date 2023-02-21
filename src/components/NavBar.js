@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../assets/img/logo-lima.png';
-import { Routes,Route,Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { Login } from '../pages/Login';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
-import './NavBar.css';
+import './Navbar.css';
 
 export const NavBar = (Login) => {
    const [activeLink, setActiveLink] = useState('home');
@@ -63,9 +63,9 @@ export const NavBar = (Login) => {
                </Nav>
                <span className="navbar-text">
                   <Link to="/Login">
-                  <button className="vvd">
-                     <span>Iniciar Sesion</span>
-                  </button>
+                     <button className="vvd">
+                        <span>Iniciar Sesion</span>
+                     </button>
                   </Link>
                   <div className="social-icon">
                      <a href="#">
