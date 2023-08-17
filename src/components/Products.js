@@ -5,17 +5,42 @@ import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import './Products.css';
 import { useEffect, useState } from 'react';
+import img1 from '../assets/img/Caesar.jpeg'
 
-export const Products = () => {
-   const [productsAll, setProductsAll] = useState([]);
 
-   useEffect(() => {
-      fetch('http://localhost:3007/products')
-         .then((response) => response.json())
-         .then((data) => setProductsAll(data));
-   }, []);
+export const Products = ({
+	allProducts,
+	setAllProducts,
+	countProducts,
+	setCountProducts,
+	total,
+	setTotal,productsAll}) => {
+   // [allProducts, setAllProducts] = useState([]);
 
-   console.log(productsAll);
+   // useEffect(() => {
+   //    fetch('http://localhost:3007/products')
+   //       .then((response) => response.json())
+   //       .then((data) => setAllProducts(data));
+   // }, []);
+   
+   const onAddProduct = product => {
+		if (allProducts.find(item => item.id === product.id)) {
+			const products = allProducts.map(item =>
+				item.id === product.id
+					? { ...item, amount: item.amount + 1 }
+					: item
+			);
+			setTotal(total + product.price * product.amount);
+			setCountProducts(countProducts + product.amount);
+			return setAllProducts([...products]);
+		}
+
+		setTotal(total + product.price * product.amount);
+		setCountProducts(countProducts + product.amount);
+		setAllProducts([...allProducts, product]);
+      console.log(countProducts);
+	};
+
 
    return (
       <section className="project" id="project">
@@ -59,8 +84,20 @@ export const Products = () => {
                               >
                                  <Tab.Pane eventKey="first">
                                     <Row>
-                                       {productsAll.map((project, index) => {
-                                          return <ProductCard key={index} {...project} />;
+                                       {productsAll.map((product) => {
+                                          return(
+                                          <div className='item' key={product.id}>
+                                          <figure>
+                                             <img src={img1} alt={product.name} />
+                                          </figure>
+                                          <div className='info-product'>
+                                             <h2>{product.name}</h2>
+                                             <p className='price'>${product.price}</p>
+                                             <button onClick={() => onAddProduct(product)}>
+                                                Añadir al carrito
+                                             </button>
+                                          </div>
+                                       </div>)
                                        })}
                                     </Row>
                                  </Tab.Pane>
